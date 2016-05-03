@@ -1,0 +1,62 @@
+<ion-nav-bar class="bar-stable " ng-class="iosdevice ? 'top-ios':'' ">
+  <!--
+<button>
+<i class="ion-arrow-left-c"></i> Back
+<button>
+-->
+  <ion-nav-buttons side="left">
+    <button class="button button-clear" ng-click="back()" ng-if="platform == 'android'">
+      <i class="ion-android-arrow-back"></i>
+    </button>
+    <button class="button button-clear" ng-click="back()" ng-if="platform == 'ios'">
+      <i class="ion-ios-arrow-back"></i> Retour
+    </button>
+  </ion-nav-buttons>
+
+  <ion-nav-title>
+    Mes coordonnées
+  </ion-nav-title>
+</ion-nav-bar>
+<ion-view view-title="" class="login-bg">
+  <ion-content>
+
+
+<div class="container">
+  <div class="account-holder">
+    <form   class="profile-form" name="userForm" ng-submit="profoliosubmit()" novalidate>
+      <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+          <label>Prénom</label>
+          <input type="text" ng-disabled="mydisabled" name="name" class="form-control" ng-model="user.name" required>
+          <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">Prénom est requis.</p>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error' : userForm.surname.$invalid && !userForm.surname.$pristine }">
+        <label>Nom</label>
+        <input type="text" ng-disabled="mydisabled" name="surname" class="form-control" ng-model="user.surname" required>
+        <p ng-show="userForm.surname.$invalid && !userForm.surname.$pristine" class="help-block">Nom est requis.</p>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+        <label>Adresse email</label>
+        <input type="email" ng-disabled="mydisabled" name="email" class="form-control" ng-model="user.email" placeholder="Email" required>
+          <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Adresse email.</p>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
+        <label>Mot de passe</label>
+        <input type="password" ng-disabled="mydisabled" name="password" class="form-control" ng-model="user.password" placeholder="Password" required>
+          <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block">Le mot de passe est requis.</p>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine }">
+        <label>Numéro de téléphone (facultatif)</label>
+        <input type="number" inputmode="numeric" pattern="[0-9]*" ng-disabled="mydisabled" name="phone" class="form-control" ng-model="user.phone" placeholder="Téléphone">
+          <p ng-show="userForm.phone.$invalid && !userForm.phone.$pristine" class="help-block">Numéro de téléphone (facultatif)</p>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error' : userForm.show_private.$invalid && !userForm.show_private.$pristine }">
+        <label>Partager mes informations avec le diocèse auquel je donne</label>
+        <input type="checkbox" ng-disabled="mydisabled" name="show_private" class="form-control" ng-model="user.show_private">
+          <p ng-show="userForm.show_private.$invalid && !userForm.show_private.$pristine" class="help-block"></p>
+      </div>
+      <button type="submit" class="btn-profile-save btn btn-default" id="profile" ng-disabled="!mydisabled && (userForm.$pristine || userForm.$invalid)"  ng-click="profile_btn()">{{btn_text}}</button>
+    </form>
+  </div>
+</div>
+</ion-content>
+</ion-view>

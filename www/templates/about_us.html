@@ -1,0 +1,32 @@
+
+<ion-nav-bar class="bar-stable " ng-class="iosdevice ? 'top-ios':'' ">
+  <!--
+<button>
+<i class="ion-arrow-left-c"></i> Back
+<button>
+-->
+  <ion-nav-buttons side="left">
+    <button class="button button-clear" ng-click="back()" ng-if="platform == 'android'">
+      <i class="ion-android-arrow-back"></i>
+    </button>
+    <button class="button button-clear" ng-click="back()" ng-if="platform == 'ios'">
+      <i class="ion-ios-arrow-back"></i> Retour
+    </button>
+  </ion-nav-buttons>
+
+  <ion-nav-title>
+    Qui sommes-nous?
+  </ion-nav-title>
+</ion-nav-bar>
+<ion-view view-title="" class="login-bg">
+  <ion-content>
+
+    <div class="container">
+      <div class="account-holder account-holder-no-padding" class="date-picker">
+        <div class="notification">
+          <p >Nous sommes 5 jeunes catholiques, multirécidivistes de l’entrepreneuriat et investis dans des projets divers et variés !<br>Après avoir créé une société de conseil pour deux d'entre nous, nous nous sommes lancés dans cette aventure atypique.<br><br>Cette application, nous l’avons d’abord créée pour nous, frustrés de n’avoir souvent à donner que le fond de nos poches.<br>Mais surtout, nous sommes heureux de pouvoir offrir un nouveau canal de financement pour notre Église.<br><br>N’hésitez pas à nous donner vos impressions, nous continuerons à faire évoluer cet outil afin qu’il puisse nous permette de donner toujours plus facilement !</p>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
